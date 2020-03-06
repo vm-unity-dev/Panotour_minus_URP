@@ -396,6 +396,7 @@ namespace Mbryonic.Panotour {
 		}
 
 		private bool hasMasterPatch = false;
+        private bool autoPlayPatch = true;
 
 		// Goto a location
 		protected void CreateLocation(int locationIndex) {
@@ -493,8 +494,15 @@ namespace Mbryonic.Panotour {
 							}
 							hasMasterPatch = true;
 						}
-						player.Play();
-					}
+                        if(patch.autoPlay == false)
+                        {
+                           // perform actions to spin up the video player and then pause it, 
+                           // generate the playback UI system
+                        }
+                        else
+                            player.Play();
+
+                    }
 
                 }
 			}

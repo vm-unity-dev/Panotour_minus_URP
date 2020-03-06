@@ -28,6 +28,7 @@ namespace Mbryonic.Panotour {
 		public float rotz;
 		public float scale = 1.621621f;
 		public bool master = false;
+        public bool autoPlay = false;
 		public float volume = 0.20f;
 		[NonSerialized] public GameObject gameObject;
 	}
