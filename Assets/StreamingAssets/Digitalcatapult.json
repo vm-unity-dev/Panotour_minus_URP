@@ -1,0 +1,416 @@
+{
+	"name": "Digitalcatapult",
+	"startLocation": "Reception",
+	"locations": [
+		{
+			"id": "Reception",
+			"panoramaPath": "Pano-3",
+			"startpan": 100.12999725341797,
+			"starttilt": -4.190000057220459,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [
+				{
+					"media": "Working-together-1.mp4",
+					"pan": 99.98999786376953,
+					"tilt": -7.46999979019165,
+					"height": 3116.0,
+					"width": 1870.0,
+					"rotx": -0.20000015199184419,
+					"roty": 0.40000003576278689,
+					"rotz": 0.0,
+					"scale": 0.27139949798583987,
+					"master": false,
+					"volume": 0.20000000298023225
+				}
+			],
+			"hotspots": [
+				{
+					"id": "Lounge_area",
+					"link": "Lounge Area",
+					"pan": 112.22000122070313,
+					"tilt": 1.0299999713897706,
+					"scale": 1.0
+				},
+				{
+					"id": "Future_networks_lab",
+					"link": "Future Networks Lab",
+					"pan": -66.16000366210938,
+					"tilt": -3.0,
+					"scale": 1.0
+				},
+				{
+					"id": "Booklet_reception",
+					"link": "reception_overview-page-001.jpg;reception_overview-page-002.jpg;reception_overview-page-003.jpg;;reception_overview-page-004.jpg;;reception_overview-page-005.jpg;;reception_overview-page-006.jpg",
+					"pan": 73.43000030517578,
+					"tilt": -24.219999313354493,
+					"scale": 1.0
+				},
+				{
+					"id": "Newsletter_reception",
+					"link": "",
+					"pan": 163.97000122070313,
+					"tilt": 2.759999990463257,
+					"scale": 0.0
+				},
+				{
+					"id": "Menu_Prototype",
+					"link": "Menu Prototype",
+					"pan": 0,
+					"tilt": -0,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "Future Networks Lab",
+			"panoramaPath": "Pano-13",
+			"startpan": 0.0,
+			"starttilt": 0.0,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [
+				{
+					"media": "Future-Network-Labs-Overview-Video-1.mp4",
+					"pan": -43.150001525878909,
+					"tilt": 3.2699999809265138,
+					"height": 1080.0,
+					"width": 1920.0,
+					"rotx": 0.7999991178512573,
+					"roty": 0.5999998450279236,
+					"rotz": 0.25,
+					"scale": 0.09856770932674408,
+					"master": false,
+					"volume": 0.20000000298023225
+				}
+			],
+			"hotspots": [
+				{
+					"id": "Reception",
+					"link": "Reception",
+					"pan": -85.37999725341797,
+					"tilt": -1.4700000286102296,
+					"scale": 1.0
+				},
+				{
+					"id": "PDF_future_networks",
+					"link": "",
+					"pan": -32.59000015258789,
+					"tilt": -25.3799991607666,
+					"scale": 0.0
+				},
+				{
+					"id": "Book_Space_future_networks",
+					"link": "",
+					"pan": 10.539999961853028,
+					"tilt": -20.719999313354493,
+					"scale": 0.0
+				},
+				{
+					"id": "Info_future_networks",
+					"link": "Partners-of-the-Future-Networks-Lab.png",
+					"pan": 78.94999694824219,
+					"tilt": -5.429999828338623,
+					"scale": 1.0
+				},
+				{
+					"id": "Menu_Prototype",
+					"link": "Menu Prototype",
+					"pan": 0,
+					"tilt": -0,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "Lounge Area",
+			"panoramaPath": "Pano-9",
+			"startpan": -90.33999633789063,
+			"starttilt": -3.450000047683716,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [],
+			"hotspots": [
+				{
+					"id": "Bridge",
+					"link": "Bridge",
+					"pan": -53.04999923706055,
+					"tilt": -6.96999979019165,
+					"scale": 1.0
+				},
+				{
+					"id": "Immersive_Lab",
+					"link": "Immersive lab",
+					"pan": -123.8499984741211,
+					"tilt": -5.190000057220459,
+					"scale": 1.0
+				},
+				{
+					"id": "Reception",
+					"link": "Reception",
+					"pan": 71.33999633789063,
+					"tilt": -1.7100000381469727,
+					"scale": 1.0
+				},
+				{
+					"id": "Menu_Prototype",
+					"link": "",
+					"pan": 0,
+					"tilt": -0,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "Bridge",
+			"panoramaPath": "Pano-7",
+			"startpan": -76.44000244140625,
+			"starttilt": -1.2300000190734864,
+			"levelpitch": 0.0,
+			"levelroll": -0.8500000238418579,
+			"nextLocation": "",
+			"patches": [],
+			"hotspots": [
+				{
+					"id": "Meeting_area",
+					"link": "Meeting Area",
+					"pan": 72.06999969482422,
+					"tilt": -2.0299999713897707,
+					"scale": 1.0
+				},
+				{
+					"id": "Lounge_area",
+					"link": "Lounge Area",
+					"pan": -37.79999923706055,
+					"tilt": -4.820000171661377,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "Immersive lab",
+			"panoramaPath": "Pano-10",
+			"startpan": 117.58000183105469,
+			"starttilt": -0.8999999761581421,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [],
+			"hotspots": [
+				{
+					"id": "Lounge_area",
+					"link": "Lounge Area",
+					"pan": -83.19000244140625,
+					"tilt": -5.570000171661377,
+					"scale": 1.0
+				},
+				{
+					"id": "Meeting_area",
+					"link": "Meeting Area",
+					"pan": 84.31999969482422,
+					"tilt": -3.509999990463257,
+					"scale": 1.0
+				},
+				{
+					"id": "PDF_immersive_lab",
+					"link": "",
+					"pan": -6.539999961853027,
+					"tilt": -35.84000015258789,
+					"scale": 0.0
+				},
+				{
+					"id": "Info_immersive_lab",
+					"link": "Immersive-Lab-UK-Map.png",
+					"pan": -176.8300018310547,
+					"tilt": -0.5199999809265137,
+					"scale": 1.0
+				},
+				{
+					"id": "Book_Space_immersive_lab",
+					"link": "",
+					"pan": -115.52999877929688,
+					"tilt": -4.050000190734863,
+					"scale": 0.0
+				},
+				{
+					"id": "Play_immersive_lab",
+					"link": "",
+					"pan": 120.33999633789063,
+					"tilt": -4.309999942779541,
+					"scale": 0.0
+				}
+			]
+		},
+		{
+			"id": "Meeting Area",
+			"panoramaPath": "Pano-6",
+			"startpan": 0.3799999952316284,
+			"starttilt": -0.550000011920929,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [],
+			"hotspots": [
+				{
+					"id": "Immersive_Lab",
+					"link": "Immersive lab",
+					"pan": -75.01000213623047,
+					"tilt": -2.309999942779541,
+					"scale": 1.0
+				},
+				{
+					"id": "Kitchen",
+					"link": "Kitchen",
+					"pan": 6.369999885559082,
+					"tilt": -3.869999885559082,
+					"scale": 1.0
+				},
+				{
+					"id": "Auditorium",
+					"link": "Auditorium",
+					"pan": 27.8799991607666,
+					"tilt": -1.440000057220459,
+					"scale": 1.0
+				},
+				{
+					"id": "Bridge",
+					"link": "Bridge",
+					"pan": -141.92999267578126,
+					"tilt": -0.41999998688697817,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "Kitchen",
+			"panoramaPath": "Pano-5",
+			"startpan": -130.35000610351563,
+			"starttilt": -2.309999942779541,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [],
+			"hotspots": [
+				{
+					"id": "Meeting_area",
+					"link": "Meeting Area",
+					"pan": -100.58999633789063,
+					"tilt": -2.3499999046325685,
+					"scale": 1.0
+				},
+				{
+					"id": "Auditorium",
+					"link": "Auditorium",
+					"pan": -171.47000122070313,
+					"tilt": -3.0799999237060549,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "Auditorium",
+			"panoramaPath": "Pano-11",
+			"startpan": -153.8800048828125,
+			"starttilt": -0.7699999809265137,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [],
+			"hotspots": [
+				{
+					"id": "Presentation_area",
+					"link": "Presentation Area",
+					"pan": -151.52999877929688,
+					"tilt": -2.069999933242798,
+					"scale": 1.0
+				},
+				{
+					"id": "Kitchen",
+					"link": "Kitchen",
+					"pan": 80.2300033569336,
+					"tilt": -4.28000020980835,
+					"scale": 1.0
+				},
+				{
+					"id": "Info_auditorium",
+					"link": "",
+					"pan": -137.05999755859376,
+					"tilt": -11.779999732971192,
+					"scale": 1.0
+				},
+				{
+					"id": "Book_Space_auditorium",
+					"link": "",
+					"pan": 167.89999389648438,
+					"tilt": 0.019999999552965165,
+					"scale": 0.0
+				},
+				{
+					"id": "Play_auditorium",
+					"link": "Future Network Labs - Overview Video-1.mp4",
+					"pan": -112.4800033569336,
+					"tilt": 1.590000033378601,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "Presentation Area",
+			"panoramaPath": "Pano-1",
+			"startpan": -140.72000122070313,
+			"starttilt": -2.4700000286102297,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [
+				{
+					"media": "Conference Hall3-1.mp4",
+					"pan": -139.89999389648438,
+					"tilt": -5.75,
+					"height": 1934.0,
+					"width": 1064.0,
+					"rotx": 0.40000003576278689,
+					"roty": -0.20000000298023225,
+					"rotz": 0.0,
+					"scale": 0.47439688444137576,
+					"master": false,
+					"volume": 0.20000000298023225
+				}
+			],
+			"hotspots": [
+				{
+					"id": "Auditorium",
+					"link": "Auditorium",
+					"pan": -38.90999984741211,
+					"tilt": -1.6799999475479127,
+					"scale": 1.0
+				},
+				{
+					"id": "chemistry",
+					"link": "fnl.png",
+					"pan": -171.99000549316407,
+					"tilt": -1.149999976158142,
+					"scale": 1.0
+				},
+				{
+					"id": "Brains",
+					"link": "",
+					"pan": 167.6199951171875,
+					"tilt": -10.510000228881836,
+					"scale": 1.0
+				},
+				{
+					"id": "VR",
+					"link": "im.png",
+					"pan": 137.97999572753907,
+					"tilt": -5.050000190734863,
+					"scale": 1.0
+				}
+			]
+		}
+	],
+	"autoCycle": false
+}

@@ -1,0 +1,25 @@
+{
+	"hotspotConfigs": [
+		{
+			"ID": "image",
+			"prefab": "",
+			"sprite": "Plus_Icon",
+			"text": "Image Hotspot",
+			"scale": 1.0
+		},
+		{
+			"ID": "movie",
+			"prefab": "Simple_Hotspot",
+			"sprite": "Plus_Icon",
+			"text": "Movie Hotspot",
+			"scale": 1.0
+		},
+		{
+			"ID": "link",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Ashington Link",
+			"scale": 1.0
+		}
+	]
+}

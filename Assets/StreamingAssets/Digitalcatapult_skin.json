@@ -1,0 +1,249 @@
+{
+	"hotspotConfigs": [
+		{
+			"ID": "Lounge_area",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Lounge Area",
+			"scale": 1.0
+		},
+		{
+			"ID": "Future_networks_lab",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Future networks lab",
+			"scale": 1.0
+		},
+		{
+			"ID": "Booklet_reception",
+			"prefab": "Pulsing_Coral_Hotspot",
+			"sprite": "booklet_reception_ic",
+			"text": "Overview",
+			"scale": 0.0
+		},
+		{
+			"ID": "Newsletter_reception",
+			"prefab": "Pulsing_Coral_Hotspot",
+			"sprite": "newsletter_reception_ic",
+			"text": "Newsletter",
+			"scale": 0.0
+		},
+		{
+			"ID": "Reception",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Reception",
+			"scale": 1.0
+		},
+		{
+			"ID": "PDF_future_networks",
+			"prefab": "",
+			"sprite": "Plus_Icon",
+			"text": "Future networks PDF",
+			"scale": 0.0
+		},
+		{
+			"ID": "Book_Space_future_networks",
+			"prefab": "",
+			"sprite": "book_space_immersive_lab_ic",
+			"text": "Book space",
+			"scale": 0.0
+		},
+		{
+			"ID": "Info_future_networks",
+			"prefab": "",
+			"sprite": "",
+			"text": "Partners",
+			"scale": 1.0
+		},
+		{
+			"ID": "Bridge",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Bridge",
+			"scale": 1.0
+		},
+		{
+			"ID": "Immersive_Lab",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Immersive Lab",
+			"scale": 1.0
+		},
+		{
+			"ID": "Reception",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Reception",
+			"scale": 1.0
+		},
+		{
+			"ID": "Meeting_area",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Meeting Area",
+			"scale": 1.0
+		},
+		{
+			"ID": "Lounge_area",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Lounge Area",
+			"scale": 1.0
+		},
+		{
+			"ID": "Lounge_area",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Lounge Area",
+			"scale": 1.0
+		},
+		{
+			"ID": "Meeting_area",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Meeting Area",
+			"scale": 1.0
+		},
+		{
+			"ID": "PDF_immersive_lab",
+			"prefab": "",
+			"sprite": "Plus_Icon",
+			"text": "Immersive lab PDF",
+			"scale": 1.0
+		},
+		{
+			"ID": "Info_immersive_lab",
+			"prefab": "",
+			"sprite": "Plus_Icon",
+			"text": "Our Locations",
+			"scale": 1.0
+		},
+		{
+			"ID": "Book_Space_immersive_lab",
+			"prefab": "",
+			"sprite": "book_space_immersive_lab_ic",
+			"text": "Book Immersive Lab",
+			"scale": 1.0
+		},
+		{
+			"ID": "Play_immersive_lab",
+			"prefab": "Pulsing_Coral_Hotspot",
+			"sprite": "play_immersive_lab_ic",
+			"text": "",
+			"scale": 1.0
+		},
+		{
+			"ID": "Immersive_Lab",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Immersive Lab",
+			"scale": 1.0
+		},
+		{
+			"ID": "Kitchen",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Kitchen",
+			"scale": 1.0
+		},
+		{
+			"ID": "Auditorium",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Auditorium",
+			"scale": 1.0
+		},
+		{
+			"ID": "Bridge",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Bridge",
+			"scale": 1.0
+		},
+		{
+			"ID": "Meeting_area",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Meeting Area ",
+			"scale": 1.0
+		},
+		{
+			"ID": "Auditorium",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Auditorium",
+			"scale": 1.0
+		},
+		{
+			"ID": "Presentation_area",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Presentation Area",
+			"scale": 1.0
+		},
+		{
+			"ID": "Kitchen",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Kitchen",
+			"scale": 1.0
+		},
+		{
+			"ID": "Info_auditorium",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Information",
+			"scale": 0.0
+		},
+		{
+			"ID": "Book_Space_auditorium",
+			"prefab": "",
+			"sprite": "book_space_immersive_lab_ic",
+			"text": "Book Auditorium space",
+			"scale": 1.0
+		},
+		{
+			"ID": "Play_auditorium",
+			"prefab": "Pulsing_Coral_Hotspot",
+			"sprite": "play_immersive_lab_ic",
+			"text": "Video",
+			"scale": 1.0
+		},
+		{
+			"ID": "Auditorium",
+			"prefab": "",
+			"sprite": "Arrow_Icon",
+			"text": "Auditorium",
+			"scale": 1.0
+		},
+		{
+			"ID": "chemistry",
+			"prefab": "Pulsing_Coral_Hotspot",
+			"sprite": "chemistry_ic",
+			"text": "Future Networks",
+			"scale": 1.0
+		},
+		{
+			"ID": "Brains",
+			"prefab": "Pulsing_Coral_Hotspot",
+			"sprite": "brains_ic",
+			"text": "AI",
+			"scale": 1.0
+		},
+		{
+			"ID": "VR",
+			"prefab": "",
+			"sprite": "vr_ic",
+			"text": "Immersive",
+			"scale": 1.0
+		},
+		{
+			"ID": "Menu_Prototype",
+			"prefab": "Menu_experiment",
+			"sprite": "",
+			"text": "Menu prototype",
+			"scale": 1.0
+		}
+	]
+}

@@ -1,0 +1,79 @@
+{
+	"name": "SampleTour",
+	"startLocation": "drax",
+	"locations": [
+		{
+			"id": "drax",
+			"panoramaPath": "Dryer",
+			"startpan": -122.33000183105469,
+			"starttilt": 0,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "",
+			"patches": [
+				{
+					"media": "Dryer2_opt.mp4",
+					"pan": -122.93000030517578,
+					"tilt": 2.25,
+					"height": 1992.0,
+					"width": 1196.0,
+					"rotx": -0.20000003278255464,
+					"roty": -0.20000015199184419,
+					"rotz": 0.0,
+					"scale": 0.45729729533195498,
+					"master": false,
+					"volume": 0.20000000298023225
+				}
+			],
+			"hotspots": [
+				{
+					"id": "image",
+					"link": "Cleaning.jpg",
+					"pan": -115.5,
+					"tilt": 2.369999885559082,
+					"scale": 1.0
+				},
+				{
+					"id": "movie",
+					"link": "LogoAnimation.mp4",
+					"pan": -105.5,
+					"tilt": 2.369999885559082,
+					"scale": 1.0
+				},
+				{
+					"id": "link",
+					"link": "ashington",
+					"pan": -125.5,
+					"tilt": 2.369999885559082,
+					"scale": 1.0
+				}
+			]
+		},
+		{
+			"id": "ashington",
+			"panoramaPath": "Intro",
+			"startpan": 126.2300033569336,
+			"starttilt": -1.2899999618530274,
+			"levelpitch": 0.0,
+			"levelroll": 0.0,
+			"nextLocation": "drax",
+			"patches": [
+				{
+					"media": "Intro_reshoot.mp4",
+					"pan": 123.9000015258789,
+					"tilt": 0.0,
+					"height": 1440.0,
+					"width": 1050.0,
+					"rotx": 0.0,
+					"roty": 0.0,
+					"rotz": 0.0,
+					"scale": 0.49629679322242739,
+					"master": true,
+					"volume": 1.0
+				}
+			],
+			"hotspots": []
+		}
+	],
+	"autoCycle": false
+}
