@@ -23,7 +23,8 @@ namespace Mbryonic
 				m_collider.center = m_rect.rect.center;
 			} else {
 				Debug.Log ("Box Collider already present");
-			}
+                m_collider = GetComponent<BoxCollider>();
+            }
 		
 		}
 
