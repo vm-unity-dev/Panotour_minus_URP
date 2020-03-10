@@ -55,6 +55,7 @@ namespace Mbryonic.Panotour
         public PanotourSkinManager skinManager;
 
         [Header("Video Patches")]
+        private List<VideoPlayer> manualPlayers = new List<VideoPlayer>();
         public GameObject patchPrefab;
         public GameObject cube;
         public GameObject patchUI;
@@ -172,6 +173,14 @@ namespace Mbryonic.Panotour
                     }
                 }
             }
+        }
+
+        //-TODO---Pass in the specific patch to be played 
+        public void PlayManualPatch(VideoPlayer vp)
+        {
+                Debug.Log("Play command sent to paused video");
+            if(vp != null)
+                vp.Play();
         }
 
         // Reloads the current location - this called by the editor to reset any changes
@@ -370,7 +379,7 @@ namespace Mbryonic.Panotour
             // Wait for the videos to spin up so we don't see ugly white patches before fading
             bool videosWaiting;
 
-            List<VideoPlayer> manualPlayers = new List<VideoPlayer>();
+             
 
             // this do while loop iterates through all the patch objects in the scene and it then grabs the videoPlayer component and queues them up so that the first frame of video is showing
             do
@@ -394,12 +403,16 @@ namespace Mbryonic.Panotour
                 yield return null;
             } while (videosWaiting);
 
-            // after all the videos are on frame one, I want to  perform an operation on any videoplayers which meet the requirement.
             foreach (VideoPlayer vp in manualPlayers)
             {
-                vp.isLooping = false;
-                StartCoroutine(OpenUiWhenPatchFinished(vp, cube));
-                vp.Pause();
+                if(vp != null)
+                {
+                    Debug.Log("VideoPlayer pause command sending for our array of manualPlayers");
+                    vp.isLooping = false;
+                    StartCoroutine(OpenUiWhenPatchFinished(vp, patchUI));
+                    vp.Pause();
+                }
+               
             }
 
             // Fade back in
@@ -571,7 +584,7 @@ namespace Mbryonic.Panotour
                         if (player.clip == null) { Debug.LogError("Cannot load " + GetResourceName(path)); }
                         player.SetDirectAudioVolume(0, patch.volume);
 
-                        player.isLooping = patch.master ? false : true;         // The patch master is for when a patch is supposed to play to end and continue to the next scene
+                        player.isLooping = patch.master ? false : true;         // The patch master is for when a patch is supposed to play to end and continue to the next scene TODO----------------ADD AUTOPLAY CHECKS AND BUTTON SETUP IN HERE
                         if (patch.master)
                         {
                             player.loopPointReached += OnMasterPatchComplete;
@@ -698,8 +711,6 @@ namespace Mbryonic.Panotour
             }
         }
 
-        // Performs the functions for the end f clip if the clip was not autoplaying or looping 
-
 
         private void OnMasterPatchComplete(VideoPlayer e)
         {
@@ -715,35 +726,46 @@ namespace Mbryonic.Panotour
             }
         }
 
+        private void OnManualPatchComplete(VideoPlayer e)
+        {
+            OpenUi(patchUI, e.gameObject);
+        }
+
+        // this coroutine monitors the videoplayer and should activate a gameobject when the video finishes
         private IEnumerator OpenUiWhenPatchFinished(VideoPlayer player, GameObject ui)
         {
-            Debug.Log("OpenUI coroutine start");
+            OpenUi(ui, player.gameObject);
+            // adds a listener to the videoplayer button
+            ui.GetComponentInChildren<Button>().onClick.AddListener(() =>
+            {
+                PlayManualPatch(player);
+                ui.SetActive(false);
+            });
+            // this condition is only met before the video starts playing
             while (!player.isPlaying)
             {
-                Debug.Log("Player is not playing - yield return null");
+                
                 yield return null;
             }
-            Debug.Log("player clip length is " + player.clip.length);
-            float offset = 1f;
-            if ((player.clip.length) < offset)
-                offset = 0f;
-            float duration = ((float)player.clip.length) - offset;
-            while ((player.clip.length) < duration)
-                yield return null;
-            OpenUi(ui, player.gameObject);
+            ui.SetActive(false);
+
+            player.loopPointReached += OnManualPatchComplete;
         }
+
+        
 
         void OpenUi(GameObject ui, GameObject parent)
         {
-            Pause();
+            Debug.Log("OpenUI function being called");
             // Position the UI to where our hotspot is
             ui.transform.parent = parent.transform;
             ui.transform.localPosition = new Vector3(0, 0, 0);
             ui.transform.localEulerAngles = new Vector3(0, 0, 0);
             ui.transform.localScale = new Vector3(1, 1, 1);
             ui.transform.parent = null;
-
             ui.SetActive(true);
+            // perhaps add the listener here that reacts to thebuttnclick?
+            
         }
 
         #endregion
@@ -806,7 +828,10 @@ namespace Mbryonic.Panotour
 
             if (Input.GetKeyDown(KeyCode.P))
             {
-                Unpause();
+
+                //PlayManualPatch();
+
+
             }
             /*
 			 * TS - TODO fix this??
@@ -825,3 +850,4 @@ namespace Mbryonic.Panotour
     }
 
 }
+
