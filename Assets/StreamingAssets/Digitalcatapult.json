@@ -84,7 +84,7 @@
 					"rotz": 0.25,
 					"scale": 0.09856770932674408,
 					"master": false,
-					"autoPlay": true,
+					"autoPlay": false,
 					"volume": 0.20000000298023225
 				}
 			],

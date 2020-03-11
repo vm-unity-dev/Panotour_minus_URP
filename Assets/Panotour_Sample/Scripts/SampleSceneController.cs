@@ -21,7 +21,7 @@ public class SampleSceneController : MonoBehaviour
     string location;
 
     private Button[] menuButtons;
-    private bool menuClosed;
+    private bool menuClosed = true;
 
     void Awake()
     {
@@ -51,6 +51,8 @@ public class SampleSceneController : MonoBehaviour
 
         player.OnHotspotClicked += (c) =>
         {
+            Debug.Log("Hotspot click detected as it should");
+            Debug.Log(c);
             if (c.Contains("Menu"))
             {
                 if (menuClosed)

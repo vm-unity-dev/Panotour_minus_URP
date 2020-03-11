@@ -747,13 +747,15 @@ namespace Mbryonic.Panotour
         {
             Debug.Log("OpenUI function being called");
             // Position the UI to where our hotspot is
-            ui.transform.parent = parent.transform;
+            ui.transform.parent = parent.transform; // changes the parent to the video patch ... 
             ui.transform.localPosition = new Vector3(0, 0, 0);
             ui.transform.localEulerAngles = new Vector3(0, 0, 0);
             ui.transform.localScale = new Vector3(1, 1, 1);
             ui.transform.parent = null;
+            // un parents the ui... at this point I could change the buttons global scale to my liking here?
+            ui.transform.localScale = new Vector3(0.1f, 0.1f, 1);
             ui.SetActive(true);
-            // perhaps add the listener here that reacts to thebuttnclick?
+            
             
         }
 
