@@ -57,7 +57,6 @@ namespace Mbryonic.Panotour
         [Header("Video Patches")]
         private List<VideoPlayer> manualPlayers = new List<VideoPlayer>();
         public GameObject patchPrefab;
-        public GameObject cube;
         public GameObject patchUI;
         public Material PatchUIMaterial;
         [Tooltip("Set this to scale all patches up and down")]
@@ -175,7 +174,7 @@ namespace Mbryonic.Panotour
             }
         }
 
-        //-TODO---Pass in the specific patch to be played 
+
         public void PlayManualPatch(VideoPlayer vp)
         {
                 Debug.Log("Play command sent to paused video");
@@ -376,25 +375,13 @@ namespace Mbryonic.Panotour
             // Load new location
             CreateLocation(GetLocationIndexByName(locationPath));
 
-            // Wait for the videos to spin up so we don't see ugly white patches before fading
+            // Wait for the videos to spin up so we don't see ugly white patches before fading-----------------------------------------------------------------------------------------------------------------------------------------------------------
             bool videosWaiting;
-
-             
-
-            // this do while loop iterates through all the patch objects in the scene and it then grabs the videoPlayer component and queues them up so that the first frame of video is showing
             do
             {
                 videosWaiting = false;
                 foreach (Patch patch in activeTour.locations[activeLocationIndex].patches)
                 {
-
-                    if (patch.autoPlay == false)// if the patch is NOT an autoplay patch, add the videoplayer to a list AND perform the frame checks
-                    {
-                        VideoPlayer vp = patch.gameObject.GetComponent<VideoPlayer>();
-                        manualPlayers.Add(vp);
-                        if (vp.frame <= 0)
-                            videosWaiting = true;
-                    }
                     if (patch.gameObject.GetComponent<VideoPlayer>().frame <= 0)
                     {
                         videosWaiting = true;
@@ -407,9 +394,7 @@ namespace Mbryonic.Panotour
             {
                 if(vp != null)
                 {
-                    Debug.Log("VideoPlayer pause command sending for our array of manualPlayers");
-                    vp.isLooping = false;
-                    StartCoroutine(OpenUiWhenPatchFinished(vp, patchUI));
+                    StartCoroutine(OpenUiWhenPatchFinished(vp, patchUI)); // has to be done here as the patch isnt given it's transform until late in its creation process
                     vp.Pause();
                 }
                
@@ -584,7 +569,8 @@ namespace Mbryonic.Panotour
                         if (player.clip == null) { Debug.LogError("Cannot load " + GetResourceName(path)); }
                         player.SetDirectAudioVolume(0, patch.volume);
 
-                        player.isLooping = patch.master ? false : true;         // The patch master is for when a patch is supposed to play to end and continue to the next scene TODO----------------ADD AUTOPLAY CHECKS AND BUTTON SETUP IN HERE
+
+                        player.isLooping = (patch.master ? false : true || patch.autoPlay ? false : true);         // The patch master is for when a patch is supposed to play to end and continue to the next scene TODO----------------ADD AUTOPLAY CHECKS AND BUTTON SETUP IN HERE
                         if (patch.master)
                         {
                             player.loopPointReached += OnMasterPatchComplete;
@@ -593,6 +579,12 @@ namespace Mbryonic.Panotour
                                 Debug.LogError("You have multiple video patches listed as master - the shortest video will define length of sequence");
                             }
                             hasMasterPatch = true;
+                        }
+                        if (!patch.autoPlay)
+                        {
+                            player.loopPointReached += OnManualPatchComplete;
+                            manualPlayers.Add(player); // adds manual player to list of manualplayers for future play pause operaions
+                            //StartCoroutine(OpenUiWhenPatchFinished(player, patchUI)); // starts the non autoplay patch mechanism
                         }
 
                         player.Play();
@@ -731,7 +723,7 @@ namespace Mbryonic.Panotour
             OpenUi(patchUI, e.gameObject);
         }
 
-        // this coroutine monitors the videoplayer and should activate a gameobject when the video finishes
+        
         private IEnumerator OpenUiWhenPatchFinished(VideoPlayer player, GameObject ui)
         {
             OpenUi(ui, player.gameObject);
@@ -741,15 +733,12 @@ namespace Mbryonic.Panotour
                 PlayManualPatch(player);
                 ui.SetActive(false);
             });
-            // this condition is only met before the video starts playing
+            
             while (!player.isPlaying)
             {
-                
                 yield return null;
             }
-            ui.SetActive(false);
-
-            player.loopPointReached += OnManualPatchComplete;
+            //ui.SetActive(false); // deactivates the UI when playing (maybe redundant)
         }
 
         
