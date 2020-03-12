@@ -740,7 +740,7 @@ PrefabInstance:
     - target: {fileID: 1330452111403908100, guid: 72e8da0bce13b394c8740537e69fa651,
         type: 3}
       propertyPath: m_Name
-      value: PlayButtonScaleTest
+      value: PlayButtonUI
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1330452111403908103, guid: 72e8da0bce13b394c8740537e69fa651, type: 3}

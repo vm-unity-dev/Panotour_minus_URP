@@ -79,6 +79,7 @@ namespace Mbryonic.Panotour
         public delegate void TourEvent(string tour);
         public delegate void LocationEvent(int index);      // index of location
         public delegate void HotspotEvent(string link);
+        public delegate void PlayButtonEvent(VideoPlayer player);
 
         public TourEvent OnTourLoaded;      // called when the tour has loaded
         public TourEvent OnTourFinished;        // Called when the tour has finished (most tours don't have a finish state)
@@ -88,6 +89,7 @@ namespace Mbryonic.Panotour
         public HotspotEvent OnHotspotClicked;  // Called when any hotspot in the location is selected
         public LocationEvent OnLocationUnload;   // Called prior to the location being unloaded
         public TourEvent OnTourChangeRequested;     // Called if a location leads to another tour being loaded
+        public PlayButtonEvent OnVideoPatchPause; // called when the patch playback UI should be shown
 
 
         public Tour ActiveTour { get { return activeTour; } }
@@ -177,8 +179,8 @@ namespace Mbryonic.Panotour
 
         public void PlayManualPatch(VideoPlayer vp)
         {
-                Debug.Log("Play command sent to paused video");
-            if(vp != null)
+            Debug.Log("Play command sent to paused video");
+            if (vp != null)
                 vp.Play();
         }
 
@@ -375,7 +377,7 @@ namespace Mbryonic.Panotour
             // Load new location
             CreateLocation(GetLocationIndexByName(locationPath));
 
-            // Wait for the videos to spin up so we don't see ugly white patches before fading-----------------------------------------------------------------------------------------------------------------------------------------------------------
+            // Wait for the videos to spin up so we don't see ugly white patches before fading
             bool videosWaiting;
             do
             {
@@ -392,12 +394,12 @@ namespace Mbryonic.Panotour
 
             foreach (VideoPlayer vp in manualPlayers)
             {
-                if(vp != null)
+                if (vp != null)
                 {
                     StartCoroutine(OpenUiWhenPatchFinished(vp, patchUI)); // has to be done here as the patch isnt given it's transform until late in its creation process
                     vp.Pause();
                 }
-               
+
             }
 
             // Fade back in
@@ -570,7 +572,7 @@ namespace Mbryonic.Panotour
                         player.SetDirectAudioVolume(0, patch.volume);
 
 
-                        player.isLooping = (patch.master ? false : true || patch.autoPlay ? false : true);         // The patch master is for when a patch is supposed to play to end and continue to the next scene TODO----------------ADD AUTOPLAY CHECKS AND BUTTON SETUP IN HERE
+                        player.isLooping = (patch.master ? false : true || patch.autoPlay ? false : true);         // The patch master is for when a patch is supposed to play to end and continue to the next scene 
                         if (patch.master)
                         {
                             player.loopPointReached += OnMasterPatchComplete;
@@ -584,7 +586,6 @@ namespace Mbryonic.Panotour
                         {
                             player.loopPointReached += OnManualPatchComplete;
                             manualPlayers.Add(player); // adds manual player to list of manualplayers for future play pause operaions
-                            //StartCoroutine(OpenUiWhenPatchFinished(player, patchUI)); // starts the non autoplay patch mechanism
                         }
 
                         player.Play();
@@ -723,40 +724,53 @@ namespace Mbryonic.Panotour
             OpenUi(patchUI, e.gameObject);
         }
 
-        
+        // adds a listener to the videoplayer button
         private IEnumerator OpenUiWhenPatchFinished(VideoPlayer player, GameObject ui)
         {
             OpenUi(ui, player.gameObject);
-            // adds a listener to the videoplayer button
             ui.GetComponentInChildren<Button>().onClick.AddListener(() =>
             {
                 PlayManualPatch(player);
-                ui.SetActive(false);
+                FadeOutUI(ui);
             });
-            
+
             while (!player.isPlaying)
             {
                 yield return null;
             }
-            //ui.SetActive(false); // deactivates the UI when playing (maybe redundant)
         }
-
-        
 
         void OpenUi(GameObject ui, GameObject parent)
         {
             Debug.Log("OpenUI function being called");
-            // Position the UI to where our hotspot is
-            ui.transform.parent = parent.transform; // changes the parent to the video patch ... 
+            ui.transform.parent = parent.transform;
             ui.transform.localPosition = new Vector3(0, 0, 0);
             ui.transform.localEulerAngles = new Vector3(0, 0, 0);
             ui.transform.localScale = new Vector3(1, 1, 1);
             ui.transform.parent = null;
-            // un parents the ui... at this point I could change the buttons global scale to my liking here?
             ui.transform.localScale = new Vector3(0.1f, 0.1f, 1);
+
+            Image buttonImage = ui.GetComponentInChildren<Image>();
+            Color c = buttonImage.color;
+            c.a = 0;
+            buttonImage.color = c;
+
             ui.SetActive(true);
-            
-            
+
+            buttonImage.DOFade(1f, 0.5f);
+
+        }
+
+        void FadeOutUI(GameObject ui)
+        {
+            Image buttonImage = ui.GetComponentInChildren<Image>();
+            Color c = buttonImage.color;
+            c.a = 1;
+            buttonImage.color = c;
+            buttonImage.DOFade(0f, 0.4f).OnComplete(() =>
+            {
+                ui.SetActive(false);
+            });
         }
 
         #endregion
@@ -841,4 +855,6 @@ namespace Mbryonic.Panotour
     }
 
 }
+
+
 
